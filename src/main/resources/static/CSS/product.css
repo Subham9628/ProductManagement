@@ -1,0 +1,17 @@
+.welcome-container {
+   text-align: center;
+   padding: 60px 20px;
+   background-color: #ffffff;
+}
+
+.welcome-message {
+   font-size: 28px;
+   font-weight: 600;
+   color: #2c3e50;
+   margin-bottom: 20px;
+}
+
+.subtitle {
+   font-size: 18px;
+   color: #7f8c8d;
+}

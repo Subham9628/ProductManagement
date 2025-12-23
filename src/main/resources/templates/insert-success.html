@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Management System | Product Insert</title>
+  <style>
+    .success-container 
+	{
+      width: 500px;
+      margin: 50px auto;
+      background-color: #f0f8ff;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .success-message {
+      color: #388e3c;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #2c6b2f;
+    }
+  </style>
+</head>
+<body onload="makeActive('insert')">
+  <div class="success-container">
+    <h2 class="success-message">Product record has been inserted successfully!</h2>
+    <a href="productList" class="btn">Back to Product List</a>
+  </div>
+</body>
+</html>

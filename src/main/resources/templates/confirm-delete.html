@@ -1,0 +1,107 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<div th:insert="~{@{menu}}"></div>
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Delete</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+   
+    .confirm-box {
+      width: 500px;
+      margin: auto;
+      margin-top: 50px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .confirm-header {
+      background: linear-gradient(to right, #d32f2f, #f44336);
+      color: white;
+      font-size: 22px;
+      text-align: center;
+      padding: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .actions {
+      text-align: right;
+      padding: 20px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-yes {
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .btn-yes:hover {
+      background-color: #b71c1c;
+    }
+
+    .btn-no {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .btn-no:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body onload='makeActive("delete")'>
+  <form action="deleteSuccess" method="get">
+    <div class="confirm-box">
+      <div class="confirm-header">
+        <i class="fas fa-trash-alt"></i> Confirm Deletion
+      </div>
+      <table>
+        <tr>
+          <th>Product ID</th>
+              <td><input type='text' th:value='${product.pid}' style="border:none;outline:none" name='pid' readonly></td>
+			    </tr>
+        <tr>
+          <th>Product Name</th>
+          <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+          <th>Product Brand</th>
+          <td th:text="${product.brand}"></td>
+        </tr>
+        <tr>
+          <th>Product Price</th>
+          <td th:text="${product.price}">&#8377</td>
+        </tr>
+      </table>
+      <div class="actions">
+        <span>Are you sure you want to delete?</span>
+        <button type="submit" class="btn btn-yes">Yes</button>
+        <button type="button" class="btn btn-no" onclick="history.back()">No</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
